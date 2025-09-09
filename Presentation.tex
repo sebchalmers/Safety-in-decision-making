@@ -417,23 +417,87 @@ Constraints
 \end{columns}
 \visible<2->{
 \begin{block}{}
-\vspace{-.35cm}
+%\vspace{-.35cm}
 \begin{align*}
 \vect\pi^\star = \argmax_{\vect\pi}&\quad\mathrm E\left[  \sum_{\text{time}} \left(\text{Utility} - \cmatr{ccc}{0&\text{if}&\text{Constraint ok}\\\infty &\text{if}&\text{Constraint not ok}}\right)\right]
 \end{align*}
 \end{block}}
 \visible<3->{
-\textbf{Remarks}: $-\infty$ penalty on constraints violations $\Rightarrow$ safe policy (mathematically) }
-\begin{columns}
-\column{0.5\textwidth}
+\textbf{Remarks}: $-\infty$ penalty on constraints violations $\Rightarrow$ safe policy (mathematically) } \underline{but}
 \visible<3->{
 \begin{itemize}
-\item Requires perfect (or pessimistic) model 
-\item Perfect (or pessimistic) policy calculation 
-\item Pessimistic? In case of doubt, assume the worst...
+\item Requires perfect model of the real world $\mathrm P[\vect s_+|\vect s,\vect a] = \hat{\mathrm P}[\vect s_+|\vect s,\vect a]$...
+\item ... or our model should ``contain" the real world, i.e. be pessimistic about the uncertainties
 \end{itemize}}
-\center
-\visible<4->{\textcolor{myBlue2}{\textbf{Classical view:\\ ``Robust" decision making}}}
+
+%\begin{columns}
+%\column{0.5\textwidth}
+%\visible<3->{
+%\begin{itemize}
+%\item Requires perfect (or pessimistic) model 
+%\item Perfect (or pessimistic) policy calculation 
+%\item Pessimistic? In case of doubt, assume the worst...
+%\end{itemize}}
+%\center
+%\visible<4->{\textcolor{myBlue2}{\textbf{Classical view:\\ ``Robust" decision making}}}
+%\column{0.5\textwidth}
+%\vspace{-1cm}
+%  \begin{overlayarea}{\textwidth}{0.4\textheight}
+%    \begin{figure}
+%     \newcommand{\FS}{0.65}
+%      \only<3>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED0.eps}%
+%        }%
+%              \only<4>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED1.eps}%
+%        }%
+%              \only<5>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED2.eps}%
+%        }%
+%                      \only<6>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED3.eps}%
+%        }%
+%                      \only<7>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED4.eps}%
+%        }%
+%                              \only<8>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED5.eps}%
+%        }%
+%                              \only<9>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED6.eps}%
+%        }%
+%                              \only<10>
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED7.eps}%
+%        }%
+%                      \only<11->
+%        {%
+%       \hspace{-1.5cm}   \includegraphics[width=\FS\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED40.eps}%
+%        }%
+%    \end{figure}
+%  \end{overlayarea} 
+%  
+%
+%\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{\normalsize Robust Decision Making}
+\footnotesize
+\begin{columns}[t]
+\column{0.5\textwidth}
+\begin{itemize}
+\item We must be able to ``contain" the uncertainty (bounded)
+\item 
+\end{itemize}
 \column{0.5\textwidth}
 \vspace{-1cm}
   \begin{overlayarea}{\textwidth}{0.4\textheight}
@@ -479,21 +543,6 @@ Constraints
   \end{overlayarea} 
   
 
-\end{columns}
-
-\end{frame}
-
-
-\begin{frame}{\normalsize Robust Decision Making}
-\footnotesize
-\begin{columns}[t]
-\column{0.5\textwidth}
-\begin{itemize}
-\item We must be able to ``contain" the uncertainty (bounded)
-\item 
-\end{itemize}
-\column{0.5\textwidth}
-\includegraphics[width=1\textwidth]{Codes/BasicsSafety/PessimisticModelSTEPBOXED7.eps}
 \end{columns}
 
 
